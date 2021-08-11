@@ -32,7 +32,7 @@ router.put("/api/workouts/:id", async (req, res) => {
   try {
     const workoutID = req.params.id;
     const workoutData = await Workout.findByIdAndUpdate(workoutID, {
-      $push: { excercises: req.body },
+      $push: { exercises: req.body },
     });
     res.json(workoutData);
   } catch (err) {

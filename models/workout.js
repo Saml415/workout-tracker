@@ -6,21 +6,21 @@ const workoutSchema = new Schema({
   day: {
     type: Date,
     default: Date.now(),
-    required: "What date was the excercise completed",
+    required: "What date was the exercise completed",
   },
-  excercises: [
+  exercises: [
     {
       type: {
         type: String,
-        required: "What type of excercise",
+        required: "What type of exercise",
       },
       name: {
         type: String,
-        required: "What is the name of the excercise",
+        required: "What is the name of the exercise",
       },
       duration: {
         type: Number,
-        required: "How long is the excercise done for",
+        required: "How long is the exercise done for",
       },
       distance: {
         type: Number,
