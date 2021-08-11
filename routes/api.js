@@ -5,7 +5,7 @@ router.get("/api/workouts", async (req, res) => {
   try {
     const workoutData = await Workout.find();
     res.json(workoutData);
-  } catch {
+  } catch (err) {
     res.status(400).json(err);
   }
 });
@@ -14,7 +14,7 @@ router.get("/api/workouts/range", async (req, res) => {
   try {
     const workoutData = await Workout.find();
     res.json(workoutData);
-  } catch {
+  } catch (err) {
     res.status(400).json(err);
   }
 });
@@ -23,7 +23,7 @@ router.post("/api/workouts", async (req, res) => {
   try {
     const workoutData = await Workout.create(req.body);
     res.json(workoutData);
-  } catch {
+  } catch (err) {
     res.status(400).json(err);
   }
 });
@@ -35,7 +35,7 @@ router.put("/api/workouts/:id", async (req, res) => {
       $push: { excercises: req.body },
     });
     res.json(workoutData);
-  } catch {
+  } catch (err) {
     res.status(400).json(err);
   }
 });
